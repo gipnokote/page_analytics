@@ -2,6 +2,8 @@
 
 A simple web-service providing store and query functionalities for a given page's views and clicks. The querying endpoints provide the possibility of filtering and aggregating the data.
 
+[Original Readme](ORIGINAL_README.md)
+
 ## Endpoints
 * [Register Page Event](docs/create.md) : `POST /page_events/`
 * [Request Page Aggregated Data](docs/total.md) : `GET /page_events/total`
@@ -20,7 +22,7 @@ Service is implemented keeping the following assumption in mind:
 You should now have the web server running on the default `http://localhost:3000`
 
 ## Testing the Service
-RSpec is used to test the application. There are request tests in [`spec/requests/page_event_spec.rb`](spec/page_event_spec.rb) and model tests inside [`spec/models`](spec/models).
+RSpec is used to test the application. There are request tests in [`spec/requests/page_event_spec.rb`](spec/requests/page_event_spec.rb) and model tests inside [`spec/models`](spec/models).
 
 Tests can be executed with `bundle exec rspec`
 
