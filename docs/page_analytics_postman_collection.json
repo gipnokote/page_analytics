@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "ecfdd7ef-ba61-4d47-9cbb-0f67daea253f",
+		"name": "Page Analytics",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST page_events",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "url",
+							"value": "https://example.com",
+							"type": "default"
+						},
+						{
+							"key": "ip",
+							"value": "127.0.0.1",
+							"type": "default"
+						},
+						{
+							"key": "event_type",
+							"value": "click",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/page_events",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"page_events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET page_events/total",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/page_events/total?url=https://example.com&event_type=click&ends_at=2022-09-08 12:00:00&starts_at=2022-09-08 08:00:00",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"page_events",
+						"total"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "https://example.com"
+						},
+						{
+							"key": "event_type",
+							"value": "click"
+						},
+						{
+							"key": "ends_at",
+							"value": "2022-09-08 12:00:00"
+						},
+						{
+							"key": "starts_at",
+							"value": "2022-09-08 08:00:00"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
