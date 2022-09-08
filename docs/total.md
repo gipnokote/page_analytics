@@ -23,7 +23,7 @@ ends_at: [optional]
 
 ```json
 {
-    "url": "https://example.com/page_one",
+	"url": "https://example.com/page_one",
 	"event_type": "view",
 	"starts_at": "2022-09-08 10:00:00",
 	"ends_at": "2022-09-08 11:00:00"
@@ -40,7 +40,7 @@ ends_at: [optional]
 
 ```json
 {
-    "events_count": 2
+	"events_count": 2
 }
 ```
 
@@ -52,7 +52,7 @@ ends_at: [optional]
 
 ```json
 {
-    "message": "Argument 'event_type' must be one of the following: [\"view\", \"click\"]"
+	"message": "Argument 'event_type' must be one of the following: [\"view\", \"click\"]"
 }
 ```
 
@@ -66,7 +66,7 @@ ends_at: [optional]
 
 ```json
 {
-    "message": "Argument 'event_type' is required"
+	"message": "Argument 'event_type' is required"
 }
 ```
 
@@ -80,6 +80,6 @@ ends_at: [optional]
 
 ```json
 {
-    "message": "Record not found"
+	"message": "Record not found"
 }
 ```

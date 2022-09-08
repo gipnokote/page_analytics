@@ -20,7 +20,7 @@ event_type: [required, can be `view` or `click`]
 
 ```json
 {
-    "url": "https://example.com/page_one",
+	"url": "https://example.com/page_one",
 	"ip": "127.0.0.1",
 	"event_type": "view"
 }
@@ -28,7 +28,7 @@ event_type: [required, can be `view` or `click`]
 
 ## Success Response
 
-**Condition** : If everything is OK and an Account didn't exist for this User.
+**Condition** : If everything is OK and Page Event was registered
 
 **Code** : `200 OK`
 
@@ -36,7 +36,7 @@ event_type: [required, can be `view` or `click`]
 
 ```json
 {
-    "status": "OK"
+	"status": "OK"
 }
 ```
 
@@ -48,7 +48,7 @@ event_type: [required, can be `view` or `click`]
 
 ```json
 {
-    "message": "'wrong' is not a valid event_type"
+	"message": "'wrong' is not a valid event_type"
 }
 ```
 
@@ -62,6 +62,6 @@ event_type: [required, can be `view` or `click`]
 
 ```json
 {
-    "message": "Validation failed: Ip can't be blank"
+	"message": "Validation failed: Ip can't be blank"
 }
 ```
