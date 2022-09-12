@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::API
   around_action :handle_exceptions
 
-  class NotFound < StandardError; end
-
+  # I chose to handle exceptions in a single place in the code
   def handle_exceptions
     begin
       yield
@@ -13,19 +12,18 @@ class ApplicationController < ActionController::API
     rescue ArgumentError => e
       render json: { message: e.message }, status: :bad_request
     rescue => e
-      handle_generic_error e
+      # When there is an unhandled error, a random hash will appear on the response.
+      # This way we can find a particular error by searching in the logs for this hash
+      error_hash = SecureRandom.hex
+      render json: { message: "Unexpected error", id: error_hash }, status: :internal_server_error
+      error_logger error_hash: error_hash, exception: exception
     end
   end
 
   private
 
-  def handle_generic_error(exception)
-    error_hash = SecureRandom.hex
-    render json: { message: "Unexpected error", id: error_hash }, status: :internal_server_error
-    error_logger error_hash: error_hash, exception: exception
-  end
-
   def error_logger(args)
+    # A more sophisticated error logging could be implemented, using Sentry or some other engine
     logger.error "[ERROR #{args[:error_hash]}] #{args[:exception].class}\n#{args[:exception].message}\n#{args[:exception].backtrace.join("\n")}"
   end
 end
